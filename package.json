@@ -1,0 +1,28 @@
+{
+  "name": "javascriptlibraries",
+  "version": "1.0.0",
+  "description": "reusable javascript components ",
+  "main": "converter.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nguyenhoangson/javascriptlibraries.git"
+  },
+  "keywords": [
+    "reusable"
+  ],
+  "author": "nguyenhoangson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nguyenhoangson/javascriptlibraries/issues"
+  },
+  "homepage": "https://github.com/nguyenhoangson/javascriptlibraries#readme",
+  "devDependencies": {
+    "chai": "^3.3.0"
+  }
+}
