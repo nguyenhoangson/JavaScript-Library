@@ -17,4 +17,47 @@ describe('Test slim converter', function(){
             expect(converter.convert(testInput)).to.equals(expected);
         });
     });
+
+    describe('Test generate method', function(){
+
+        it('should generate slim code from a tree structure', function(){
+            /* Test input
+             *    div
+             *   / \
+             *  p  div
+             *       \
+             *        p
+             */
+
+            var testInput = {
+                tag: 'div',
+                attributes: '',
+                text: '',
+                children: []
+            };
+
+            testInput.children.push({
+                tag: 'p',
+                attributes: 'style="something"',
+                text: 'Hello the world',
+                children: []
+            });
+
+            testInput.children.push({
+                tag: 'div',
+                attributes: 'style="hi"',
+                text: '',
+                children: []
+            });
+
+            testInput.children[1].children.push({
+                tag: 'p',
+                attributes: 'style="Chao"',
+                text: 'May be',
+                children: []
+            });
+
+            expect(converter.generate(testInput)).to.equal('div  \n\tp style="something" Hello the world\n\tdiv style="hi" \n\t\tp style="Chao" May be\n');
+        });
+    });
 });
